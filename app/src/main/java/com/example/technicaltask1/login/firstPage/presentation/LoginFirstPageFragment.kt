@@ -2,6 +2,8 @@ package com.example.technicaltask1.login.firstPage.presentation
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
@@ -62,20 +64,24 @@ class LoginFirstPageFragment : Fragment() {
                 binding.bttnContinue.isEnabled = true
                 binding.bttnContinue.alpha = 1F
             }
-            binding.etInput.setOnFocusChangeListener { view, hasFocus ->
-                if (hasFocus) {
-                    binding.closeIvFirstPage.isVisible = true
-                }
-            }
         }
+        binding.etInput.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (!p0.isNullOrEmpty()) binding.clearIvFirstPage.isVisible = true
+            }
+        })
+
     }
 
     private fun otherSetOnClickListenerLogic() {
-        binding.closeIvFirstPage.setOnClickListener {
+        binding.clearIvFirstPage.setOnClickListener {
             binding.etInput.text.clear()
             binding.bttnContinue.isEnabled = false
             binding.firstPageFrame1.setBackground(getResources().getDrawable(R.drawable.edit_text_search_background))
             binding.redTextFirstScreen.isVisible = false
+            binding.clearIvFirstPage.isVisible = false
         }
 
         binding.bttnLogin.setOnClickListener {

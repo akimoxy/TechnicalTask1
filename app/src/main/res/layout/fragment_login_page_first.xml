@@ -95,7 +95,7 @@
 
 
         <ImageView
-            android:id="@+id/close_iv_first_page"
+            android:id="@+id/clear_iv_first_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
