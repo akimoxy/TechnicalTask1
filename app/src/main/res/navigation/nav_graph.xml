@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/rootActivity">
+    app:startDestination="@id/loginFirstPageFragment">
 
     <activity
         android:id="@+id/rootActivity"
@@ -39,12 +39,20 @@
         android:id="@+id/loginFirstPageFragment"
         android:name="com.example.technicaltask1.login.firstPage.presentation.LoginFirstPageFragment"
         android:label="fragment_entrance_first"
-        tools:layout="@layout/fragment_login_page_first" />
+        tools:layout="@layout/fragment_login_page_first" >
+        <action
+            android:id="@+id/action_loginFirstPageFragment_to_loginSecondPageFragment"
+            app:destination="@id/loginSecondPageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginSecondPageFragment"
         android:name="com.example.technicaltask1.login.secondPage.presentation.LoginSecondPageFragment"
         android:label="fragment_entrance_second"
-        tools:layout="@layout/fragment_login_page_second" />
+        tools:layout="@layout/fragment_login_page_second" >
+        <action
+            android:id="@+id/action_loginSecondPageFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
 
 
 </navigation>

@@ -15,5 +15,7 @@
     <string name="posting_vacancies">Размещение вакансий и доступ к базе резюме</string>
     <string name="looking_for_employees">Я ищу сотрудников</string>
     <string name="email">"Электронная почта"</string>
+    <string name="incorrect_email_address">"Вы ввели неверный e-mail"</string>
+
 
 </resources>

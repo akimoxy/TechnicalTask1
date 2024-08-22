@@ -6,6 +6,9 @@ plugins {
 android {
     namespace = "com.example.technicaltask1"
     compileSdk = 34
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.technicaltask1"
@@ -47,10 +50,10 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
      // Fragments
-    implementation("androidx.fragment:fragment-ktx:1.8.1")
+    implementation(libs.androidx.fragment.ktx.v181)
 
     // Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
 }
