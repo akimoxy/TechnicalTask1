@@ -1,0 +1,25 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".search.presentation.SearchFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/favouritesLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dp16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/favouritesRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dp16" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginFirstPageFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".login.firstPage.presentation.LoginFirstPageFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstPageLeftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dp16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstPageRightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dp16" />
+
+    <TextView
+        android:id="@+id/tv_login_to"
+        style="@style/MediumText.24size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp64"
+        android:text="@string/login_to"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/iv_layout_search"/>
+
+    <ImageView
+        android:id="@+id/iv_layout_search"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp178"
+        android:background="@drawable/background_for_first_page_gray"
+        app:cornerRadius="@dimen/dp16"
+        app:layout_constraintEnd_toStartOf="@id/firstPageRightGuideline"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_to"
+        app:layout_constraintBottom_toBottomOf="@+id/center_horizontal_first"/>
+
+    <TextView
+        android:id="@+id/search_job_tv"
+        style="@style/MediumText.16size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp16"
+        android:paddingTop="@dimen/dp24"
+        android:layout_marginBottom="136dp"
+        android:text="@string/search_job"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toTopOf="@id/iv_layout_search"
+        app:layout_constraintBottom_toBottomOf="@id/iv_layout_search"
+        />
+
+    <FrameLayout
+        android:id="@+id/first_page_frame1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:background="@drawable/edit_text_search_background"
+        app:layout_constraintEnd_toStartOf="@id/firstPageRightGuideline"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/search_job_tv">
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:autofillHints=""
+            android:background="@null"
+            android:drawableStart="@drawable/responses_icon"
+            android:drawablePadding="@dimen/dp8"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center_vertical"
+            android:hint="@string/email"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingStart="@dimen/dp8"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="@color/grey3"
+            app:layout_constraintEnd_toStartOf="@id/firstPageRightGuideline"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/close_iv_first_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp16"
+            android:background="@drawable/close_icon"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+            app:layout_constraintTop_toTopOf="@+id/first_page_frame1"
+            tools:visibility="visible" />
+    </FrameLayout>
+    <Button
+        android:id="@+id/bttn_continue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:backgroundTint="@color/blue"
+        android:text="@string/continue_"
+        app:cornerRadius="@dimen/dp8"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/first_page_frame1"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_layout_search"
+        android:layout_marginBottom="@dimen/dp24"
+        app:layout_constraintEnd_toStartOf="@+id/bttn_login"
+        />
+    <Button
+        android:id="@+id/bttn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/dp16"
+        android:backgroundTint="@android:color/transparent"
+        android:text="@string/login_with_password"
+        app:cornerRadius="@dimen/dp8"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toEndOf="@+id/bttn_continue"
+        app:layout_constraintEnd_toEndOf="@id/firstPageRightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/first_page_frame1"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_layout_search"
+        android:layout_marginBottom="@dimen/dp24"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/center_horizontal_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+    <ImageView
+        android:id="@+id/iv_layout_search2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp142"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/background_for_first_page_gray"
+        app:cornerRadius="@dimen/dp16"
+        app:layout_constraintEnd_toStartOf="@id/firstPageRightGuideline"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/iv_layout_search" />
+    <TextView
+        android:id="@+id/search_employees_tv"
+        style="@style/MediumText.16size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp16"
+        android:paddingTop="@dimen/dp24"
+        android:layout_marginBottom="136dp"
+        android:text="@string/search_for_employees"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toTopOf="@id/iv_layout_search2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_layout_search2"
+        />
+    <TextView
+        android:id="@+id/tv_posting_vacancy"
+        style="@style/RegularText.14size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp16"
+        android:paddingTop="@dimen/dp8"
+        android:layout_marginBottom="136dp"
+        android:text="@string/posting_vacancies"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/search_employees_tv"
+        />
+    <Button
+        android:id="@+id/bttn_search_employees"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:backgroundTint="@color/green"
+        android:text="@string/looking_for_employees"
+        app:cornerRadius="@dimen/dp8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_posting_vacancy"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_layout_search2"
+        android:layout_marginBottom="@dimen/dp24"
+        app:layout_constraintEnd_toStartOf="@+id/firstPageRightGuideline"
+        app:layout_constraintStart_toStartOf="@id/firstPageLeftGuideline"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

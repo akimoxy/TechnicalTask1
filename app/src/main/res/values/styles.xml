@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RegularText">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="SemiboldText">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="MediumText">
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="RegularText.12size">
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+    <style name="RegularText.14size">
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="MediumText.24size">
+        <item name="android:textSize">@dimen/sp24</item>
+    </style>
+    <style name="MediumText.16size">
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="SemiboldText.24size">
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="bottom_navigation_view" parent="RegularText.12size">
+        <item name="buttonStyle" type="style">@style/bottom_navigation_view</item>
+        <item name="itemTextColor">@color/bottom_nav_color</item>
+        <item name="itemIconTint">@color/bottom_nav_color</item>
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+</resources>

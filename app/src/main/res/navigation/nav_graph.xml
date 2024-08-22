@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/rootActivity">
+
+    <activity
+        android:id="@+id/rootActivity"
+        android:name="com.example.technicaltask1.RootActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_root" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.technicaltask1.favorites.presentation.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.technicaltask1.search.presentation.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/responsesFragment"
+        android:name="com.example.technicaltask1.responses.presentation.ResponsesFragment"
+        android:label="fragment_responses"
+        tools:layout="@layout/fragment_responses" />
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.example.technicaltask1.messages.presentation.MessagesFragment"
+        android:label="fragment_messages"
+        tools:layout="@layout/fragment_messages" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.technicaltask1.profile.presentation.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/loginFirstPageFragment"
+        android:name="com.example.technicaltask1.login.firstPage.presentation.LoginFirstPageFragment"
+        android:label="fragment_entrance_first"
+        tools:layout="@layout/fragment_login_page_first" />
+    <fragment
+        android:id="@+id/loginSecondPageFragment"
+        android:name="com.example.technicaltask1.login.secondPage.presentation.LoginSecondPageFragment"
+        android:label="fragment_entrance_second"
+        tools:layout="@layout/fragment_login_page_second" />
+
+
+</navigation>
