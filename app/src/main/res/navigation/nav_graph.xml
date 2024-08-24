@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_loginFirstPageFragment_to_loginSecondPageFragment"
             app:destination="@id/loginSecondPageFragment" />
+        <argument
+            android:name="password"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/loginSecondPageFragment"

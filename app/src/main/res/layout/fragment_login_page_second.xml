@@ -16,11 +16,121 @@
         app:layout_constraintGuide_begin="@dimen/dp16" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/login_page2_favouritesRightGuideline"
+        android:id="@+id/login_page2_RightGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/dp16" />
+
+    <TextView
+        android:id="@+id/send_code_second_page"
+        style="@style/SemiboldText.20size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp162"
+        android:text="@string/send_code_to"
+        app:layout_constraintStart_toEndOf="@id/login_page2_LeftGuideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/email_second_page"
+        style="@style/SemiboldText.20size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp162"
+        android:layout_marginEnd="@dimen/dp16"
+        android:gravity="start"
+        android:text="@string/email_address_placeholder"
+        app:layout_constraintStart_toEndOf="@id/send_code_second_page"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enter_code"
+        style="@style/RegularText.16size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/enter_code"
+        app:layout_constraintEnd_toStartOf="@id/login_page2_RightGuideline"
+        app:layout_constraintStart_toEndOf="@id/login_page2_LeftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/send_code_second_page" />
+
+    <EditText
+        android:id="@+id/otp1"
+        style="@style/RegularText.16size"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="@dimen/dp48"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/background_for_first_page_gray"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="@color/grey3"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintStart_toEndOf="@id/login_page2_LeftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/enter_code" />
+
+    <EditText
+        android:id="@+id/otp2"
+        style="@style/RegularText.16size"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="@dimen/dp48"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/background_for_first_page_gray"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="@color/grey3"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintStart_toEndOf="@id/otp1"
+        app:layout_constraintTop_toBottomOf="@id/enter_code" />
+
+    <EditText
+        android:id="@+id/otp3"
+        style="@style/RegularText.16size"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="@dimen/dp48"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/background_for_first_page_gray"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="@color/grey3"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintStart_toEndOf="@id/otp2"
+        app:layout_constraintTop_toBottomOf="@id/enter_code" />
+
+    <EditText
+        android:id="@+id/otp4"
+        style="@style/RegularText.16size"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="@dimen/dp48"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/background_for_first_page_gray"
+        android:gravity="center"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="@color/grey3"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintStart_toEndOf="@id/otp3"
+        app:layout_constraintTop_toBottomOf="@id/enter_code" />
+
+    <Button
+        android:id="@+id/bttn_continue_second"
+        style="@style/RegularText.14size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp24"
+        android:backgroundTint="@color/blue"
+        android:text="@string/confirm"
+        app:cornerRadius="@dimen/dp8"
+        app:layout_constraintEnd_toStartOf="@+id/login_page2_RightGuideline"
+        app:layout_constraintStart_toStartOf="@id/login_page2_LeftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/otp1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

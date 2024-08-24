@@ -39,7 +39,8 @@ android {
 }
 
 dependencies {
-    val navigationVersion = "2.7.7"
+    implementation(libs.io.insert.koin.koin.core)
+//      implementation(libs.insert.koin.koin.core)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -48,12 +49,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-     // Fragments
+ //   implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    // Fragments
     implementation(libs.androidx.fragment.ktx.v181)
 
     // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    //koin
+  //  implementation(libs.koin.core)
+   // implementation(libs.koin.bom)
+    implementation(libs.koin.android)
+
 
 }

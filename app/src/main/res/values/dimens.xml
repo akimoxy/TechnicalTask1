@@ -21,6 +21,7 @@
     <dimen name="dp26">26dp</dimen>
     <dimen name="dp32">32dp</dimen>
     <dimen name="dp40">40dp</dimen>
+    <dimen name="dp48">48dp</dimen>
     <dimen name="dp58">58dp</dimen>
     <dimen name="dp64">64dp</dimen>
     <dimen name="dp142">144dp</dimen>

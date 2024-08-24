@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
@@ -17,10 +18,14 @@ import androidx.navigation.fragment.findNavController
 
 import com.example.technicaltask1.R
 import com.example.technicaltask1.databinding.FragmentLoginPageFirstBinding
+import com.example.technicaltask1.login.secondPage.presentation.LoginSecondPageFragment
+
+const val EMAIL = "email"
 
 class LoginFirstPageFragment : Fragment() {
     private var _binding: FragmentLoginPageFirstBinding? = null
     private val binding get() = _binding!!
+    private var text = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,12 +49,15 @@ class LoginFirstPageFragment : Fragment() {
     private fun buttonContinueLogic() {
         with(binding) {
             bttnContinue.isEnabled = false
-            bttnContinue.alpha = 0.9F
+            bttnContinue.alpha = 0.7F
             bttnContinue.setOnClickListener {
                 if (Patterns.EMAIL_ADDRESS.matcher(etInput.text.toString()).matches()) {
                     firstPageFrame1.setBackground(getResources().getDrawable(R.drawable.edit_text_search_background))
                     redTextFirstScreen.isVisible = false
-                    findNavController().navigate(R.id.action_loginFirstPageFragment_to_loginSecondPageFragment)
+                    findNavController().navigate(
+                        R.id.action_loginFirstPageFragment_to_loginSecondPageFragment,
+                        bundleOf("password" to text)
+                    )
                 } else {
                     firstPageFrame1.setBackground(getResources().getDrawable(R.drawable.edit_text_stroke_red))
                     redTextFirstScreen.isVisible = true
@@ -69,10 +77,11 @@ class LoginFirstPageFragment : Fragment() {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(p0: Editable?) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (!p0.isNullOrEmpty()) binding.clearIvFirstPage.isVisible = true
+                if (p0.isNullOrEmpty()) binding.bttnContinue.alpha = 0.7F
+                binding.clearIvFirstPage.isVisible = p0.isNullOrEmpty().not()
+                text = p0.toString()
             }
         })
-
     }
 
     private fun otherSetOnClickListenerLogic() {
