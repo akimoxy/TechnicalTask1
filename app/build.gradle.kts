@@ -49,7 +49,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
- //   implementation(platform(libs.koin.bom))
+    //   implementation(platform(libs.koin.bom))
     implementation(libs.koin.core)
     // Fragments
     implementation(libs.androidx.fragment.ktx.v181)
@@ -57,10 +57,22 @@ dependencies {
     // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
     //koin
-  //  implementation(libs.koin.core)
-   // implementation(libs.koin.bom)
     implementation(libs.koin.android)
+    val retrofitVersion = "2.9.0"
+    //retrofit+Gson and Json (Serialization)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+    implementation(libs.gson)
+    implementation(libs.jetbrains.kotlinx.serialization.json.v163)
+
+     //coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation (libs.glide)
+
 
 
 }

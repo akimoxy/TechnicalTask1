@@ -26,11 +26,6 @@ class LoginFirstPageFragment : Fragment() {
     private var _binding: FragmentLoginPageFirstBinding? = null
     private val binding get() = _binding!!
     private var text = ""
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,14 +47,14 @@ class LoginFirstPageFragment : Fragment() {
             bttnContinue.alpha = 0.7F
             bttnContinue.setOnClickListener {
                 if (Patterns.EMAIL_ADDRESS.matcher(etInput.text.toString()).matches()) {
-                    firstPageFrame1.setBackground(getResources().getDrawable(R.drawable.edit_text_search_background))
+                    firstPageFrame1.background = resources.getDrawable(R.drawable.edit_text_search_background)
                     redTextFirstScreen.isVisible = false
                     findNavController().navigate(
                         R.id.action_loginFirstPageFragment_to_loginSecondPageFragment,
                         bundleOf("password" to text)
                     )
                 } else {
-                    firstPageFrame1.setBackground(getResources().getDrawable(R.drawable.edit_text_stroke_red))
+                    firstPageFrame1.background = resources.getDrawable(R.drawable.edit_text_stroke_red)
                     redTextFirstScreen.isVisible = true
                 }
             }

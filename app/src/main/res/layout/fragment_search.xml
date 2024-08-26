@@ -21,5 +21,154 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/dp16" />
 
+    <FrameLayout
+        android:id="@+id/search_page_frame1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp64"
+        android:background="@drawable/edit_text_search_background"
+        app:layout_constraintEnd_toStartOf="@id/searchRightGuideline"
+        app:layout_constraintStart_toStartOf="@id/searchLeftGuideline"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:autofillHints=""
+            android:background="@null"
+            android:drawableStart="@drawable/search_icon"
+            android:drawablePadding="@dimen/dp8"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center_vertical"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingStart="@dimen/dp8"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorOnPrimary"
+            android:textColorHint="@color/grey3"
+            app:layout_constraintEnd_toStartOf="@id/searchRightGuideline"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/clear_iv_first_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp16"
+            android:background="@drawable/close_icon"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/searchLeftGuideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <TextView
+        style="@style/RegularText.14size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp24"
+        app:layout_constraintBottom_toTopOf="@id/scroll"
+        app:layout_constraintStart_toStartOf="@id/searchLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/search_page_frame1"
+        tools:text="*** вакансий" />
+
+    <TextView
+        style="@style/RegularText.14size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp24"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toTopOf="@id/scroll"
+        app:layout_constraintEnd_toStartOf="@+id/search_sorting_placeholder"
+        app:layout_constraintTop_toBottomOf="@id/search_page_frame1"
+        tools:text="по соответствию " />
+
+    <ImageView
+        android:id="@+id/search_sorting_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp24"
+        android:src="@drawable/sorting_placeholder"
+        app:layout_constraintBottom_toTopOf="@id/scroll"
+        app:layout_constraintEnd_toStartOf="@id/searchRightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/search_filter_placeholder" />
+
+    <ImageView
+        android:id="@+id/search_filter_placeholder"
+        android:layout_width="@dimen/dp40"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/edit_text_search_background"
+        android:src="@drawable/filter_icon"
+        app:layout_constraintEnd_toStartOf="@id/searchRightGuideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler_recommendation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp12"
+        android:layout_marginTop="@dimen/dp16"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toStartOf="@id/searchRightGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_page_frame1"
+        tools:listitem="@layout/recommendation_item" />
+
+    <EditText
+        android:id="@+id/search_vacancy_for_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp24"
+        android:layout_marginBottom="@dimen/dp16"
+        android:background="@android:color/transparent"
+        android:text="@string/search_vacancy_for_you"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/searchLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/search_recycler_recommendation" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/searchRightGuideline"
+        app:layout_constraintStart_toEndOf="@id/searchLeftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/search_vacancy_for_you">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_recycler_vacancy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:orientation="vertical" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp24"
+                android:layout_marginBottom="@dimen/dp8"
+                android:backgroundTint="@color/blue"
+                app:cornerRadius="@dimen/dp8"
+                app:layout_constraintEnd_toStartOf="@id/searchRightGuideline"
+                app:layout_constraintStart_toEndOf="@id/searchLeftGuideline"
+                app:layout_constraintTop_toBottomOf="@id/search_recycler_vacancy"
+                tools:text="Еще 100500 вакансий" />
+        </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
